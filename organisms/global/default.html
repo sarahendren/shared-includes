@@ -11,7 +11,8 @@
 		<!-- Place favicon.ico in the root directory -->
 
 		<link rel="stylesheet" href="/css/main.css">
-		<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+		<script src="https://use.typekit.net/bqe6szg.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>		<script src="js/vendor/modernizr-2.8.3.min.js"></script>
 	</head>
 	<body {% if page.collection %}class="body--subpage"{% endif %}>
 		<!--[if lt IE 8]>
@@ -25,8 +26,12 @@
 			{{ content }}
 		</main>
 
+		{% include shared-includes/molecules/navigation/footer.html %}
+
 		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/instantclick/3.0.1/instantclick.min.js" data-no-instant></script>
+		<script data-no-instant>InstantClick.init();</script>
 		<script src="js/plugins.js"></script>
 		<script src="js/main.js"></script>
 
