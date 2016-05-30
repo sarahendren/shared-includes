@@ -1,8 +1,8 @@
-<a class="" href="{{ item.url }}">
+<a href="{{ item.url }}">
 	<figure>
 		<img class="thumbnail__img" src="{{ item.image }}" alt="{{ item.image_caption }}">
 		<figcaption class="thumbnail__figcaption">{{ item.caption }}</figcaption>
 	</figure>
 	<h2>{{ item.title }}</h2>
-	<h2>{{ item.date }}</h2>
+  {% include shared-includes/date-month-day-year.html %}
 </a>

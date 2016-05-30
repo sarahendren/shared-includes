@@ -1,0 +1,8 @@
+<nav class="nav--primary">
+	<ul class="nav__list">
+		{% assign items = site.pages | sort:"position" %}
+		{% for item in items %}
+				<li class="nav__item {% if page.url == item.url or page.parent == item.url %}nav__item--active{% endif %}"><a class="nav__link {{ item.slug }}" href="{{ item.url }}">{{ item.title }}</a></li>
+		{% endfor %}
+	</ul>
+</nav>

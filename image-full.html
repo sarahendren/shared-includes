@@ -1,0 +1,6 @@
+{% if item.image %}
+	<figure class="full">
+		<img class="full__img" src="{% if item.image contains '/uploads' %}{{ site.imgix }}{{ item.image | remove: "/uploads" }}?fit=crop&crop=entropy&w=1088&h=500{% else %}{{ item.image}}{% endif %}" width="1088" height="500" alt="{{ item.image-caption }}">
+		<figcaption class="full__caption">{{ item.image-caption | markdownify }}</figcaption>
+	</figure>
+{% endif %}

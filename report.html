@@ -1,0 +1,13 @@
+<a class="item item--row" href="{{ item.url }}">
+  <div class="item__date">
+    {% include shared-includes/date-month-day-year.html %}
+  </div>
+  <div class="item__content">
+    {% include shared-includes/title.html %}
+    {% include shared-includes/byline.html %}
+    {{ item.excerpt | strip_html }}   
+  </div>
+  <figure class="item__thumb">
+    {% include shared-includes/thumb.html %}
+  </figure>
+</a>

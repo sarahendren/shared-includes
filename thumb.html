@@ -1,0 +1,1 @@
+<img src="{% if item.image contains '/uploads' %}{{ site.imgix }}{{ item.image | remove: "/uploads" }}?fit=crop&crop=entropy&w=400&h=400{% else %}{{ item.image}}{% endif %}" width="400" height="400" alt="{{ item.image-caption }}" />
