@@ -1,1 +1,1 @@
-<div class="lead">{{ include.text | markdownify }}</div>
+<div class="lead">{{ include.text | default: page.welcome-text | markdownify }}</div>
