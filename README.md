@@ -44,3 +44,4 @@ These are bits of frequently re-used Jekyll template code, shared between Sara H
 ### Sections
 
 - Latest Posts
+- Grid

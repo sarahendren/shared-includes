@@ -1,7 +1,7 @@
 <section class="grid">
   {% for item in item.grid %}
     <figure class="grid__item grid__item--figure">
-      <a href="{{ item.url }}">
+      <a href="{{ item.url }}" alt="{{ item.image-caption }}">
         {% include shared-includes/thumb.html width="800" height="600" %}
       </a>
     </figure>
