@@ -1,1 +1,1 @@
-<div class="lead">{{ include.text | default: page.welcome-text | markdownify }}</div>
+{% if include.text or page.welcome-text %}<div class="lead">{{ include.text | default: page.welcome-text | markdownify }}</div>{% endif %}
