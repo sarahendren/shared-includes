@@ -1,6 +1,6 @@
-{% if item.image %}
-	<figure class="figure">
-		<img class="figure__image" src="{% if item.image contains '/uploads' %}{{ site.imgix }}{{ item.image | remove: "/uploads" }}?fit=min&w=1037{% else %}{{ item.image}}{% endif %}" alt="{{ item.image-caption }}">
-		<figcaption class="figure__caption">{{ item.image-caption | markdownify }}</figcaption>
-	</figure>
-{% endif %}
+<figure class="figure">
+	<img class="figure__image" src="{% if include.image contains '/uploads' %}{{ site.imgix }}{{ include.image | remove: "/uploads" }}?fit=min&w=1037{% else %}{{ include.image}}{% endif %}" alt="{{ include.image-caption }}">
+	{% if include.image-caption %}
+		<figcaption class="figure__caption">{{ include.image-caption | markdownify }}</figcaption>
+	{% endif %}
+</figure>
