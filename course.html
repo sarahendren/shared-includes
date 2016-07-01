@@ -1,8 +1,19 @@
-<a class="item item--card" href="{{ item.url }}">
-  <figure class="item__thumb">
-    {% include shared-includes/thumb.html width="458" height="343" %}
-  </figure>
-  <div class="item__content">
-    {% include shared-includes/title.html %}
+{% if item.comingsoon == true %}
+  <div class="item item--card" href="{{ item.url }}">
+    <figure class="item__thumb">
+      <img src="https://placeholdit.imgix.net/~text?txtsize=38&txt=coming%20soon&w=458&h=343" alt="coming soon" width="458" height="343" />
+    </figure>
+    <div class="item__content">
+      {% include shared-includes/title.html %}
+    </div>
   </div>
-</a>
+{% else %}
+  <a class="item item--card" href="{{ item.url }}">
+    <figure class="item__thumb">
+      {% include shared-includes/thumb.html width="458" height="343" %}
+    </figure>
+    <div class="item__content">
+      {% include shared-includes/title.html %}
+    </div>
+  </a>
+{% endif %}
