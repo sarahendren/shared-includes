@@ -1,5 +1,17 @@
 <figure class="figure">
-	<img class="figure__image" src="{% if include.image contains '/uploads' %}{{ site.imgix }}{{ include.image | remove: "/uploads" }}?fit=min&w=1037{% else %}{{ include.image}}{% endif %}" alt="{{ include.image-caption }}">
+	<img class="figure__image"
+		{% if include.image contains '/uploads' %}
+			ix-path="{{ include.image | remove: "/uploads" }}"
+			ix-params='{
+				"w": 1037,
+				"fit": "min"
+			}'
+			ix-host="{{ site.imgix | remove: "http://"  }}"
+			sizes="(min-width: 75em) 1037px, 100vw"
+		{% else %}
+			src="{{ include.image}}"
+		{% endif %}
+	alt="{{ item.image-caption }}">
 	{% if include.image-caption %}
 		<figcaption class="figure__caption">{{ include.image-caption | markdownify }}</figcaption>
 	{% endif %}

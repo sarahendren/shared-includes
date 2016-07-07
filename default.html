@@ -10,12 +10,9 @@
 		<link rel="apple-touch-icon" href="apple-touch-icon.png">
 		<!-- Place favicon.ico in the root directory -->
 
-		<link rel="stylesheet" type="text/css" href="/css/infusion/fluid.css" />
-		<link rel="stylesheet" type="text/css" href="/css/infusion/fluidDebugging.css" />
 		<link rel="stylesheet" type="text/css" href="/css/infusion/Enactors.css" />
 		<link rel="stylesheet" type="text/css" href="/css/infusion/PrefsEditor.css" />
 		<link rel="stylesheet" type="text/css" href="/css/infusion/SeparatedPanelPrefsEditor.css" />
-		<link rel="stylesheet" type="text/css" href="/css/infusion/uiOptions.css" />
 
 		<link rel="stylesheet" type="text/css" href="/fonts/1606-GGKPSI.css">
 		<link rel="stylesheet" href="/css/main.css">
@@ -36,35 +33,15 @@
 
 		{% include shared-includes/footer.html %}
 
+		<script async type="text/javascript" src="//code.jquery.com/jquery-3.0.0.min.js"></script>
 
-		<script type="text/javascript" src="//code.jquery.com/jquery-3.0.0.min.js" data-no-instant></script>
-		<script type="text/javascript" src="//code.jquery.com/ui/1.11.4/jquery-ui.js" data-no-instant></script>
+		<script type="text/javascript" src="/js/imgix.min.js"></script>
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/instantclick/3.0.1/instantclick.min.js" data-no-instant></script>
+		<script type="text/javascript" src="/js/infusion-all.js"></script>
 
-		<script type="text/javascript" src="/js/infusion-all.js" data-no-instant></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
 
-		<script>
-			$(document).ready(function () {
-					fluid.uiOptions.prefsEditor(".flc-prefsEditor-separatedPanel", {
-							terms: {
-									"templatePrefix": "../../src/framework/preferences/html",
-									"messagePrefix": "../../src/framework/preferences/messages"
-							},
-							"tocTemplate": "../../src/components/tableOfContents/html/TableOfContents.html",
-							"ignoreForToC": {
-									"overviewPanel": ".flc-overviewPanel"
-							}
-					});
-			});
-		</script>
-		<script data-no-instant>
-			InstantClick.init();
-		</script>
-
-		<script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js" data-no-instant></script>
-
-		<script src="/js/plugins.js"></script>
+	</script src="/js/plugins.js"></script>
 
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID.
 		<script>
@@ -76,7 +53,6 @@
 			ga('create','UA-XXXXX-X','auto');ga('send','pageview');
 		</script>
 		 -->
-
 
 	</body>
 </html>

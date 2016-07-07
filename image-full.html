@@ -1,6 +1,23 @@
 {% if item.image %}
 	<figure class="figure--full">
-		<img class="figure__image--full" src="{% if item.image contains '/uploads' %}{{ site.imgix }}{{ item.image | remove: "/uploads" }}?fit=crop&crop=entropy&w=1088&h=500{% else %}{{ item.image}}{% endif %}" width="1088" height="500" alt="{{ item.image-caption }}">
+		<img class="figure__image--full"
+				width="20"
+				height="9"
+			{% if item.image contains '/uploads' %}
+				src="{{ site.imgix }}{{ item.image | remove: "/uploads" }}?w=20&h=9&fit=crop"
+				ix-path="{{ item.image | remove: "/uploads" }}"
+				ix-params='{
+			    "w": 1088,
+			    "h": 500,
+			    "fit": "crop",
+			    "crop": "entropy"
+			  }'
+				ix-host="{{ site.imgix | remove: "http://"  }}"
+				sizes="(min-width: 75em) 1088px, 100vw"
+			{% else %}
+				src="{{ item.image}}"
+			{% endif %}
+			alt="{{ item.image-caption }}">
 		<figcaption class="figure__caption--full">{{ item.image-caption | markdownify }}</figcaption>
 	</figure>
 {% endif %}
