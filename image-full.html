@@ -4,7 +4,7 @@
 				width="20"
 				height="9"
 			{% if item.image contains '/uploads' %}
-				src="{{ site.imgix }}{{ item.image | remove: "/uploads" }}?w=20&h=9&fit=crop"
+				src="{{ site.imgix }}{{ item.image | remove: "/uploads" }}?w=11&h=5&fit=crop&crop=entropy"
 				ix-path="{{ item.image | remove: "/uploads" }}"
 				ix-params='{
 			    "w": 1088,
