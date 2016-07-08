@@ -7,7 +7,9 @@
     {% include shared-includes/byline.html %}
     {{ item.excerpt | strip_html }}
   </div>
-  <figure class="item__thumb">
-    {% include shared-includes/thumb.html width="241" height="181" %}
-  </figure>
+  <div class="item__image">
+    <figure class="item__thumb item__thumb--report">
+      {% include shared-includes/thumb.html width="241" height="181" %}
+    </figure>    
+  </div>
 </a>
