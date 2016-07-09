@@ -1,6 +1,7 @@
 <figure class="figure">
-	<img class="figure__image"
+	<img class="figure__image--full lazyload"
 		{% if include.image contains '/uploads' %}
+			src="{{ site.imgix }}{{ include.image | remove: "/uploads" }}?w=10&fit=min"
 			ix-path="{{ include.image | remove: "/uploads" }}"
 			ix-params='{
 				"w": 1037,
@@ -9,9 +10,9 @@
 			ix-host="{{ site.imgix | remove: "http://"  }}"
 			sizes="(min-width: 75em) 1037px, 100vw"
 		{% else %}
-			src="{{ include.image}}"
+			src="{{ item.image}}"
 		{% endif %}
-	alt="{{ item.image-caption }}">
+		alt="{{ include.image-caption }}">
 	{% if include.image-caption %}
 		<figcaption class="figure__caption">{{ include.image-caption | markdownify }}</figcaption>
 	{% endif %}
