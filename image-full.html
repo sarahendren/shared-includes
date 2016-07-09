@@ -1,23 +1,27 @@
 {% if item.image %}
 	<figure class="figure--full">
-		<img class="figure__image--full"
-				width="20"
-				height="9"
+		<div class="ratio-box fade-box">
+	    <img class="figure__image--full"
 			{% if item.image contains '/uploads' %}
 				src="{{ site.imgix }}{{ item.image | remove: "/uploads" }}?w=11&h=5&fit=crop&crop=entropy"
-				ix-path="{{ item.image | remove: "/uploads" }}"
-				ix-params='{
-			    "w": 1088,
-			    "h": 500,
-			    "fit": "crop",
-			    "crop": "entropy"
-			  }'
-				ix-host="{{ site.imgix | remove: "http://"  }}"
-				sizes="(min-width: 75em) 1088px, 100vw"
-			{% else %}
-				src="{{ item.image}}"
 			{% endif %}
-			alt="{{ item.image-caption }}">
+			/>
+			<img class="figure__image--full lazyload"
+				{% if item.image contains '/uploads' %}
+					ix-path="{{ item.image | remove: "/uploads" }}"
+					ix-params='{
+				    "w": 1088,
+				    "h": 500,
+				    "fit": "crop",
+				    "crop": "entropy"
+				  }'
+					ix-host="{{ site.imgix | remove: "http://"  }}"
+					sizes="(min-width: 75em) 1088px, 100vw"
+				{% else %}
+					src="{{ item.image}}"
+				{% endif %}
+				alt="{{ item.image-caption }}">
+		</div>
 		<figcaption class="figure__caption--full">{{ item.image-caption | markdownify }}</figcaption>
 	</figure>
 {% endif %}
