@@ -1,27 +1,14 @@
 <div class="ratio-box fade-box">
-  <img
-  {% if item.image contains '/uploads' %}
-    src="{{ site.imgix }}{{ item.image | remove: "/uploads" }}?fit=facearea&crop=entropy&w=300&blur=300&facepad=2&auto=compress"
-  {% endif %}
-  />
-  <img
-    class="lazyload"
-    {% if item.image contains '/uploads' %}
-      ix-path="{{ item.image | remove: "/uploads" }}"
-      ix-params='{
-        "w": {{item.width | default: "300"}},
-        "h": {{item.height | default: "300"}},
-        "fit": "facearea",
-        "crop": "entropy",
-        "auto": "compress",
-        "facepad": 2
-      }'
-      ix-host="{{ site.imgix | remove: "http://"  }}"
-      sizes="(min-width: 75em) {{item.width | default: "300"}}, 100vw"
+    <img
+      {% if item.image contains '/uploads' %}
+        src="{{ site.imgix }}{{ item.image | remove: "/uploads" }}?fit=facearea&crop=entropy&w=15&h=15&blur=15&facepad=2&auto=compress" />
+      <img
+        class="lazyload"
+        data-src="{{ site.imgix }}{{ item.image | remove: "/uploads" }}?fit=facearea&crop=entropy&w=300&h=300&facepad=2&auto=compress"
     {% else %}
-      src="{{ item.image}}"
+        src="{{ item.image}}"
     {% endif %}
-    width="{{item.width | default: "300"}}"
-    height="{{item.height | default: "300"}}"
-    alt="{{ item.image-caption }}" />
+        width="{{item.width | default: "400"}}"
+        height="{{item.height | default: "300"}}"
+        alt="{{ item.image-caption }}" />
 </div>

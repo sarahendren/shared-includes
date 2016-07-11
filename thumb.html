@@ -4,14 +4,11 @@
         src="{{ site.imgix }}{{ item.image | remove: "/uploads" }}?w=10&h=7&fit=crop&crop=entropy&auto=compress" />
       <img
         class="lazyload"
-        data-src="{{ site.imgix }}{{ item.image | remove: "/uploads" }}?w={{item.width | default: "400"}}&h={{item.height | default: "300"}}&fit=crop&crop=entropy&auto=compress"
-        width="{{item.width | default: "400"}}"
-        height="{{item.height | default: "300"}}"
-        alt="{{ item.image-caption }}"
+        data-src="{{ site.imgix }}{{ item.image | remove: "/uploads" }}?w={{include.width | default: "400"}}&h={{include.height | default: "300"}}&fit=crop&crop=entropy&auto=compress"
     {% else %}
         src="{{ item.image}}"
     {% endif %}
-        width="{{item.width | default: "400"}}"
-        height="{{item.height | default: "300"}}"
+        width="{{include.width | default: "400"}}"
+        height="{{include.height | default: "300"}}"
         alt="{{ item.image-caption }}" />
 </div>
