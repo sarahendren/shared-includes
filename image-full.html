@@ -1,12 +1,12 @@
 {% if item.image %}
-	<figure class="figure--full">
+	<figure class="figure figure--full">
 		<div class="ratio-box fade-box">
-	    <img class="figure__image--full"
+	    <img class="figure__image figure__image--full"
 			{% if item.image contains '/uploads' %}
 				src="{{ site.imgix }}{{ item.image | remove: "/uploads" }}?w=11&h=5&fit=crop&crop=entropy&auto=compress"
 			{% endif %}
 			/>
-			<img class="figure__image--full lazyload"
+			<img class="figure__image figure__image--full lazyload"
 				{% if item.image contains '/uploads' %}
 					ix-path="{{ item.image | remove: "/uploads" }}"
 					ix-params='{
@@ -23,6 +23,6 @@
 				{% endif %}
 				alt="{{ item.image-caption }}">
 		</div>
-		<figcaption class="figure__caption--full">{{ item.image-caption | markdownify }}</figcaption>
+		<figcaption class="figure__caption figure__caption--full">{{ item.image-caption | markdownify }}</figcaption>
 	</figure>
 {% endif %}
