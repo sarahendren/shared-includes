@@ -35,30 +35,30 @@
 		<script type="text/javascript" src="//code.jquery.com/jquery-3.0.0.min.js" data-no-instant></script>
 
 		<script src="/js/lazysizes.min.js"></script>
-
 		<script type="text/javascript" src="/js/imgix.min.js"></script>
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/instantclick/3.0.1/instantclick.min.js" data-no-instant></script>
-
 		<script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
-
-		<script data-no-instant>
-				InstantClick.init();
+		<script type="text/javascript">
+			$("article").fitVids();
 		</script>
 
-	<script type="text/javascript" src="/js/infusion-all.js" data-no-instant></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/instantclick/3.0.1/instantclick.min.js" data-no-instant></script>
+		<script data-no-instant>
+			InstantClick.init();
+		</script>
 
+		<script type="text/javascript" src="/js/infusion-all.js" data-no-instant></script>
 		<script type="text/javascript">
-				fluid.uiOptions.prefsEditor(".flc-prefsEditor-separatedPanel", {
-						terms: {
-								"templatePrefix": "../../src/framework/preferences/html",
-								"messagePrefix": "../../src/framework/preferences/messages"
-						},
-						"tocTemplate": "../../src/components/tableOfContents/html/TableOfContents.html",
-						"ignoreForToC": {
-								"overviewPanel": ".flc-overviewPanel"
-						}
-				});
+			fluid.uiOptions.prefsEditor(".flc-prefsEditor-separatedPanel", {
+					terms: {
+							"templatePrefix": "../../src/framework/preferences/html",
+							"messagePrefix": "../../src/framework/preferences/messages"
+					},
+					"tocTemplate": "../../src/components/tableOfContents/html/TableOfContents.html",
+					"ignoreForToC": {
+							"overviewPanel": ".flc-overviewPanel"
+					}
+			});
 		</script>
 
 		<script src="/js/plugins.js"></script>
