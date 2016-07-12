@@ -41,11 +41,6 @@
 			$("article").fitVids();
 		</script>
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/instantclick/3.0.1/instantclick.min.js" data-no-instant></script>
-		<script data-no-instant>
-			InstantClick.init();
-		</script>
-
 		<script type="text/javascript" src="/js/infusion-all.js" data-no-instant></script>
 		<script type="text/javascript">
 			fluid.uiOptions.prefsEditor(".flc-prefsEditor-separatedPanel", {
@@ -71,6 +66,11 @@
 			InstantClick.on('change', function() {
 			  ga('send', 'pageview', location.pathname + location.search);
 			});
+		</script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/instantclick/3.0.1/instantclick.min.js" data-no-instant></script>
+		<script data-no-instant>
+			InstantClick.init();
 		</script>
 
 	</body>
