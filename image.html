@@ -1,5 +1,5 @@
-<figure class="figure">
-		<img class="figure__image figure__image--full lazyload"
+<figure class="figure figure--bigcaption {% if include.style == "bigcaption" %}figure--bigcaption{% endif %}">
+		<img class="figure__image lazyload"
 			{% if include.image contains '/uploads' %}
 			src="{{ site.imgix }}{{ include.image | remove: "/uploads" }}?w=10&fit=min&auto=compress"
 				ix-path="{{ include.image | remove: "/uploads" }}"
