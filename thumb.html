@@ -5,9 +5,11 @@
       <img
         class="lazyload"
         data-src="{{ site.imgix }}{{ item.image | remove: "/uploads" }}?w={{include.width | default: "400"}}&h={{include.height | default: "300"}}&fit=crop&crop=entropy&auto=compress"
-    {% else %}
-        src="{{ item.image}}"
-    {% endif %}
+      {% else %}
+        {% if item.meta.image != "" %}
+          src="{{ item.meta.image | remove: "wp-content" }}"
+        {% endif %}
+      {% endif %}
         width="{{include.width | default: "400"}}"
         height="{{include.height | default: "300"}}"
         alt="{{ item.image-caption }}" />

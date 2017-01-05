@@ -1,1 +1,1 @@
-{% if item.author %}<p class="byline" >By {{ item.author }}</p>{% endif %}
+{% if item.author.first_name %}<p class="byline" >By {{ item.author.first_name }} {{ item.author.last_name }}</p>{% elsif item.author %}<p class="byline" >By {{ item.author }}</p>{% endif %}

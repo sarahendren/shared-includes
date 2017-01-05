@@ -5,7 +5,7 @@
   <div class="item__content">
     {% include shared-includes/title.html %}
     {% include shared-includes/byline.html %}
-    {{ item.excerpt | strip_html }}
+    {{ item.excerpt | strip_html | truncatewords: 30 }}
   </div>
   <div class="item__image">
     <figure class="item__thumb item__thumb--report">
