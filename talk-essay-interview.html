@@ -1,0 +1,9 @@
+<a class="item item--card" href="{{ item.url }}">
+  <figure class="item__thumb item__thumb--project">
+    {% include shared-includes/thumb.html width="329" height="247" %}
+  </figure>
+  <div class="item__content">
+    <p class="date">{% if item.subtitle != "SUBTITLE" %}{{ item.subtitle }}{% endif %} {% if item.date-display != "DISPLAY DATE" %}&bull; {{ item.date-display }}{% endif %}</p>
+    {% include shared-includes/title.html %}
+  </div>
+</a>

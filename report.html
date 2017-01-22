@@ -7,9 +7,11 @@
     {% include shared-includes/byline.html %}
     {{ item.excerpt | strip_html | truncatewords: 30 }}
   </div>
-  <div class="item__image">
-    <figure class="item__thumb item__thumb--report">
-      {% include shared-includes/thumb.html width="241" height="181" %}
-    </figure>
-  </div>
+  {% if item.image == "" %}
+    <div class="item__image">
+      <figure class="item__thumb item__thumb--report">
+        {% include shared-includes/thumb.html width="241" height="181" %}
+      </figure>
+    </div>
+  {% endif %}
 </a>
