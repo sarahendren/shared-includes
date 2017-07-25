@@ -1,6 +1,13 @@
 {% if item.image %}
+	{% assign image = item.image | remove: '/uploads/' | replace: '%20', ' ' %}
 	<figure class="figure">
-		<img class="figure__image" src="{% if item.image contains '/uploads' %}{{ site.imgix }}{{ item.image | remove: "/uploads" }}?fit=min&w=1037&auto=compress{% else %}{{ item.image}}{% endif %}" alt="{{ item.image-caption }}">
+		{% img "{{image}}"
+				magick:resize:1037x1037^
+				class:"figure__image"
+				data-src:"{{asset_path}}"
+				width:"400"
+				height:"300"
+				alt:"{{ item.image-caption }}" %}
 		<figcaption class="figure__caption">{{ item.image-caption | markdownify }}</figcaption>
 	</figure>
 {% endif %}

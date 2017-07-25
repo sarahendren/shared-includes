@@ -1,27 +1,15 @@
 {% if item.image %}
+	{% assign image = item.image | remove: '/uploads/' | replace: '%20', ' ' %}
 	<figure class="figure figure--full">
 		<div class="ratio-box fade-box">
-	    <img class="figure__image figure__image--full"
-			{% if item.image contains '/uploads' %}
-				src="{{ site.imgix }}{{ item.image | remove: "/uploads" }}?w=11&h=5&fit=crop&crop=entropy&auto=compress"
-			{% endif %}
-			/>
-			<img class="figure__image figure__image--full lazyload"
-				{% if item.image contains '/uploads' %}
-					ix-path="{{ item.image | remove: "/uploads" }}"
-					ix-params='{
-				    "w": 1088,
-				    "h": 500,
-				    "fit": "crop",
-				    "crop": "entropy",
-						"auto": "compress"
-				  }'
-					ix-host="{{ site.imgix | remove: "http://"  }}"
-					sizes="(min-width: 75em) 1088px, 100vw"
-				{% else %}
-					src="{{ item.image}}"
-				{% endif %}
-				alt="{{ item.image-caption }}">
+			{% img "{{image}}" magick:resize:11x5^ magick:crop:11x5+0+0 class:"figure__image figure__image--full" %}
+			{% img "{{image}}"
+					magick:resize:1088x500^  magick:crop:1088x500+0+0
+					class:"figure__image figure__image--full lazyload"
+					data-src:"{{asset_path}}"
+					width:"1088"
+					height:"500"
+					alt:"{{ item.image-caption }}" %}
 		</div>
 		<figcaption class="figure__caption figure__caption--full">{{ item.image-caption | markdownify }}</figcaption>
 	</figure>
