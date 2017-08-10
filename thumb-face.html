@@ -1,14 +1,11 @@
+{% assign image = item.image | remove: '/uploads/' | replace: '%20', ' ' %}
+
 <div class="ratio-box fade-box">
-    <img
-      {% if item.image contains '/uploads' %}
-        src="{{ site.imgix }}{{ item.image | remove: "/uploads" }}?fit=facearea&crop=entropy&w=15&h=15&blur=15&facepad=2&auto=compress" />
-      <img
-        class="lazyload"
-        data-src="{{ site.imgix }}{{ item.image | remove: "/uploads" }}?fit=facearea&crop=entropy&w=300&h=300&facepad=2&auto=compress"
-    {% else %}
-        src="{{ item.image}}"
-    {% endif %}
-        width="{{item.width | default: "300"}}"
-        height="{{item.height | default: "300"}}"
-        alt="{{ item.image-caption }}" />
+  {% img "{{image}}"
+  		magick:resize:300x300^ magick:crop:300x300+0+0
+  		class:"lazyload"
+  		data-src:"{{asset_path}}"
+  		width:"300"
+  		height:"300"
+  		alt:"{{ item.image-caption }}" %}
 </div>
