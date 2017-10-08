@@ -5,12 +5,12 @@
 
     <!-- This div is for the sliding panel that shows and hides the Preference Editor controls -->
     <div class="fl-panelBar">
-
 			<nav class="nav--cross">
+				<h1 class="nav__site-title"><a href="{{ site.url }}">{{ site.title }}</a></h1>
 				<ul class="nav__list">
-					<li class="nav__item{% if site.title == "abler" %} nav__item--active{% endif %}"><a class="nav__link" href="https://ablersite.org/">abler</a></li>
-					<li class="nav__item{% if site.title == "adaptation + ability group @ Olin College" %} nav__item--active{% endif %}"><a class="nav__link" href="http://aplusa.org">adaptation + ability<span class="hide-xs"> group</span></a></li>
-					<li class="nav__item {% if site.title == "sara hendren" %} nav__item--active{% endif %}"><a class="nav__link" href="http://sarahendren.com">sara hendren</a></li>
+					<li class="nav__item nav__item--withseparator{% if site.title == "abler" %} nav__item--active{% endif %}"><a class="nav__link" href="https://ablersite.org/">abler</a></li>
+					<li class="nav__item nav__item--withseparator{% if site.title == "adaptation + ability group @ Olin College" %} nav__item--active{% endif %}"><a class="nav__link" href="http://aplusa.org">adaptation + ability<span class="hide-xs"> group</span></a></li>
+					<li class="nav__item nav__item--withrightpadding{% if site.title == "sara hendren" %} nav__item--active{% endif %}"><a class="nav__link" href="http://sarahendren.com">sara hendren</a></li>
 					<li class="nav__item nav__item--last nav__item--icon">
 							<span class="fl-prefsEditor-buttons">
 				          <button id="reset" class="flc-prefsEditor-reset fl-prefsEditor-reset">Reset</button>
