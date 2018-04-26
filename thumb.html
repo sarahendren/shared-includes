@@ -1,6 +1,8 @@
-{% assign image = item.image | remove: '/uploads/' | replace: '%20', ' ' %}
+{% if item.image != null %}
+      {% assign image = item.image | remove: '/uploads/' | replace: '%20', ' ' %}
 
-<div class="ratio-box fade-box">
-      {% img "{{image}}" magick:resize:10x7^ magick:crop:10x7+0+0 %}
-      {% img "{{image}}" magick:resize:400x300^ magick:crop:400x300+0+0 class:"lazyload" data-src:"{{asset_path}}" width:"400" height:"300" alt:"{{ item.image-caption }}" %}
-</div>
+      <div class="ratio-box fade-box">
+            {% img "{{image}}" magick:resize:10x7^ magick:crop:10x7+0+0 %}
+            {% img "{{image}}" magick:resize:400x300^ magick:crop:400x300+0+0 class:"lazyload" data-src:"{{asset_path}}" width:"400" height:"300" alt:"{{ item.image-caption }}" %}
+      </div>
+{% endif %}
